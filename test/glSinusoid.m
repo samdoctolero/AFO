@@ -1,14 +1,14 @@
 %% caputoSinusoid test
 clear all; close all; clc;
 
-addpath('..\src', '..\src\rl');
+addpath('..\src', '..\src\gl');
 
 %% 
-h = 0.001;
+h = 0.01;
 a = 0.9;
-nsamples = 5000;
+nsamples = 1000;
 fsamples = fof('test', nsamples);
-rlobj = rl(h, a, nsamples, 10, 100);
+globj = gl(h, a, nsamples, 10, 100);
 
 x = 0 : h : 100;
 w = pi/10;
@@ -19,7 +19,7 @@ for i = 1 : numel(x)
 
     fsamples = pushf(fsamples, y(i));
 
-    afoc(i) = rlcalc(rlobj, fsamples);
+    afoc(i) = glcalc(globj, fsamples);
 
 end
 
