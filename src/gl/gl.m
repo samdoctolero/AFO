@@ -21,7 +21,7 @@ for i = 2 : nsamples
 end
 
 coeffs = coeffs/((h^a)*gamma(2-a));
-coeffs = flip(coeffs);
+%coeffs = flip(coeffs);
 
 obj = struct('h',h,'a',a,'c', coeffs,'ln',lown,'hn',highn);
 

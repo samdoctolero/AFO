@@ -6,7 +6,7 @@ addpath('..\src', '..\src\gl');
 %% 
 h = 0.01;
 a = 0.9;
-nsamples = 1000;
+nsamples = 5000;
 fsamples = fof('test', nsamples);
 globj = gl(h, a, nsamples, 10, 100);
 
