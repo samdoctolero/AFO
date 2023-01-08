@@ -6,7 +6,7 @@ function out = ccalc(cap, samples)
 
 coeff = transition(cap.ln, cap.hn, samples.count);
 
-out = coeff*(cap.c*samples.samples')/(cap.h^cap.a);
+out = coeff*(cap.c*samples.samples');
 
 end
 

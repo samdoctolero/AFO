@@ -13,11 +13,13 @@ function obj = caputo(h, a, nsamples, lown, highn)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % calculate the coefficients
-coeffs = ones(1, nsamples)/gamma(2-a);
+coeffs = ones(1, nsamples);
 for i = 2: nsamples
     j = i - 1;
-    coeffs(i) = ((j+1)^(1-a) - 2*j^(1 - a) + (j-1)^(1-a))/gamma(2-a);
+    coeffs(i) = ((j+1)^(1-a) - 2*j^(1 - a) + (j-1)^(1-a));
 end
+
+coeffs = coeffs/((h^a)*gamma(2-a));
 
 obj = struct('h',h,'a',a,'c', coeffs,'ln',lown,'hn',highn);
 
